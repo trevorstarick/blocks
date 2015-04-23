@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Index of {{path}}</title>
+  <style>
+  .dz-preview {
+    display: none !important;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Index of {{path}}</h1>
+  <table>
+    {{#each files}}
+    <tr title="{{owner}} | {{dateModified}}">
+      <td>
+        <code>({{permissions}})</code>
+      </td>
+      <td style="text-align: right; padding-left: 1em">
+        <code>{{filesize}}</code>
+      </td>
+      <td style="padding-left: 1em"><a href="{{path}}">{{name}}</a></td>
+    </tr>
+    {{/each}}
+
+  </table>
+  <br>
+  <address>{{engine}} v{{version}}/ <a href="{{link}}">{{server}}</a> server running @ {{address}}</address>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
+  <script type="text/javascript">
+    var dz = new Dropzone("html", {
+      url: window.location.pathname,
+      clickable: false,
+      autoProcessQueue: true,
+      createImageThumbnails: false
+    });
+
+    dz.on('complete', function() {
+      location.reload();
+    });
+  </script>
+</body>
+
+</html>
