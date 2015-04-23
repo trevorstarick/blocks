@@ -176,4 +176,7 @@ app.post('/*', function(req, res) {
   res.send(req.files);
 });
 
-app.listen(80);
+var port = process.env.PORT || 80;
+
+app.listen(port);
+console.log('Server listening at http://0.0.0.0:' + port);
