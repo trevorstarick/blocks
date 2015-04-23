@@ -12,4 +12,4 @@ Inspired by `sudo http-server . -p 80`.
 
 `λ  npm install && sudo node server.js`
 
-*enviorment ports are on my list of things to change*
+~~*enviorment ports are on my list of things to change*~~
